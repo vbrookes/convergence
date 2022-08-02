@@ -10,9 +10,14 @@
 # samples in the sets will decrease. Estimate the point at which the CV is < 0.025.
 
 
-# This is samples from the Warraber model.
-Sample1 = read.csv("file:///C:/Users/viki.brookes/OneDrive/Rabies/Papers/Rabies_Model/NetworkPaper_results/Warraber_Warraber_NewWS_2018_09_29_131519/Duration.csv", header = F)
-Sample2= read.csv("file:///C:/Users/viki.brookes/OneDrive/Rabies/Papers/Rabies_Model/NetworkPaper_results/Warraber_Warraber_NewWS_2018_09_29_131519/Rabid_dogs.csv", header = F)
+# This is samples from model output.
+library(readr)
+
+urlfile="https://github.com/vbrookes/convergence/blob/main/Duration.csv"
+Sample1 = read.csv(urlfile)
+
+urlfile="https://github.com/vbrookes/convergence/blob/main/Rabid_dogs.csv"
+Sample2 = read.csv(urlfile)
 
 Sample1 = c(Sample1$V2) # Make a list 
 summary(Sample1)
